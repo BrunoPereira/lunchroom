@@ -7,12 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.lunchroom.product.exception.ProductException;
 import com.lunchroom.product.model.Product;
 import com.lunchroom.product.repository.ProductRepository;
 
+@RestController
+@RequestMapping("/api/product")
 public class RestControler {
 
     private final ProductRepository repository;
