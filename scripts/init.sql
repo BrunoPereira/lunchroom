@@ -1,3 +1,10 @@
+CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    employee varchar(20) NOT NULL,
+    created date NOT NULL,
+    updated date NOT NULL DEFAULT CURRENT_DATE
+);
+
 CREATE TABLE product (
     id SERIAL PRIMARY KEY,
     name varchar(20) NOT NULL UNIQUE,

@@ -1,10 +1,10 @@
-package com.lunchroom.order;
+package com.lunchroom.orders;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OrderApplicationTests {
+class OrdersApplicationTests {
 
 	@Test
 	void contextLoads() {

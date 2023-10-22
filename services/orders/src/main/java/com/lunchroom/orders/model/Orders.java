@@ -1,4 +1,4 @@
-package com.lunchroom.order.model;
+package com.lunchroom.orders.model;
 
 
 
@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Order {
+public class Orders {
     @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

@@ -1,4 +1,4 @@
-package com.lunchroom.order.controler;
+package com.lunchroom.orders.controler;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,38 +15,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lunchroom.order.model.Order;
-import com.lunchroom.order.service.OrderService;
+import com.lunchroom.orders.model.Orders;
+import com.lunchroom.orders.service.OrdersService;
 
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/api/orders")
 public class RestControler {
 
     @Autowired
-    private OrderService orderService;
+    private OrdersService orderService;
 
     @GetMapping
-    public ResponseEntity<List<Order>> findAll() {
+    public ResponseEntity<List<Orders>> findAll() {
         return ResponseEntity.status(HttpStatus.OK).body(orderService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Order>> findById(@PathVariable Long id) {
+    public ResponseEntity<Optional<Orders>> findById(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(orderService.findById(id));
     }
 
     @PostMapping
-    public ResponseEntity<Order> create(@RequestBody Order order) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(orderService.save(order));
+    public ResponseEntity<Orders> create(@RequestBody Orders orders) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(orderService.save(orders));
     }
 
     @PutMapping
-    public ResponseEntity<Order> update(@RequestBody Order order) {
-        return ResponseEntity.status(HttpStatus.OK).body(orderService.update(order));
+    public ResponseEntity<Orders> update(@RequestBody Orders orders) {
+        return ResponseEntity.status(HttpStatus.OK).body(orderService.update(orders));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Order> delete(@PathVariable Long id) {
+    public ResponseEntity<Orders> delete(@PathVariable Long id) {
         orderService.deleteById(id);
         return ResponseEntity.status(HttpStatus.OK).build();
     }

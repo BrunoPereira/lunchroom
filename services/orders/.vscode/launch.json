@@ -1,0 +1,22 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-OrdersApplication<orders>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.lunchroom.orders.OrdersApplication",
+      "projectName": "orders",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "ORDER_PORT": 8082,
+        "DB_HOST": "localhost"
+      }
+    }
+  ]
+}

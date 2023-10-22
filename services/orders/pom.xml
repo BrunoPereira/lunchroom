@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lunchroom</groupId>
-	<artifactId>order</artifactId>
+	<artifactId>orders</artifactId>
 	<version>0.0.1</version>
 	<name>order</name>
 	<description>Demo project for Spring Boot</description>
