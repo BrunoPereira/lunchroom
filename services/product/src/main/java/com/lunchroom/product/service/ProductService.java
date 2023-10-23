@@ -3,6 +3,8 @@ package com.lunchroom.product.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.lunchroom.product.model.CaloriesRequest;
+import com.lunchroom.product.model.CaloriesResponse;
 import com.lunchroom.product.model.Product;
 
 public interface ProductService {
@@ -16,5 +18,7 @@ public interface ProductService {
     Product update(Product product);
 
     void deleteById(Long id);
+
+    CaloriesResponse calculateCalories(CaloriesRequest caloriesRequest);
 
 }

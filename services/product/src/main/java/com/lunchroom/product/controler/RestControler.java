@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lunchroom.product.model.CaloriesRequest;
+import com.lunchroom.product.model.CaloriesResponse;
 import com.lunchroom.product.model.Product;
 import com.lunchroom.product.service.ProductService;
 
@@ -49,5 +51,10 @@ public class RestControler {
     public ResponseEntity<Product> delete(@PathVariable Long id) {
         productService.deleteById(id);
         return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @PostMapping("/calories")
+    public ResponseEntity<CaloriesResponse> calculateCalories(@RequestBody CaloriesRequest caloriesRequest) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(productService.calculateCalories(caloriesRequest));
     }
 }
