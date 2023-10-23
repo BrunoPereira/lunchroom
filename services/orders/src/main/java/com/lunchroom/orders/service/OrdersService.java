@@ -7,14 +7,16 @@ import com.lunchroom.orders.model.Orders;
 
 public interface OrdersService {
     
-    Orders save(Orders order);
+    Orders save(Orders order, String employee);
 
     List<Orders> findAll();
 
-    Optional<Orders> findById(Long id);
+    List<Orders> findAllByEmployee(String employee);
 
-    Orders update(Orders order);
+    Optional<Orders> findById(Long id, String employee);
 
-    void deleteById(Long id);
+    Orders update(Orders order, String employee);
+
+    void deleteById(Long id, String employee);
 
 }

@@ -9,14 +9,21 @@ import com.lunchroom.orders.repository.OrdersRepository;
 import java.util.*;
 
 @Service
-public class OrdersServiceImpl implements OrdersService{
+public class OrdersServiceImpl implements OrdersService {
 
     @Autowired
     private OrdersRepository ordersRepository;
 
     @Override
-    public Orders save(Orders order) {
+    public Orders save(Orders order, String employee) {
+        order.setCreated(new Date());
+        order.setUpdated(new Date());
         return ordersRepository.save(order);
+    }
+
+    @Override
+    public List<Orders> findAllByEmployee(String employee) {
+        return ordersRepository.findAll();
     }
 
     @Override
@@ -25,17 +32,17 @@ public class OrdersServiceImpl implements OrdersService{
     }
 
     @Override
-    public Optional<Orders> findById(Long id) {
+    public Optional<Orders> findById(Long id, String employee) {
         return ordersRepository.findById(id);
     }
 
     @Override
-    public Orders update(Orders order) {
+    public Orders update(Orders order, String employee) {
         return ordersRepository.save(order);
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(Long id, String employee) {
         ordersRepository.deleteById(id);
     }
 }

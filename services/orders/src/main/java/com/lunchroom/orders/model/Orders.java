@@ -1,6 +1,6 @@
 package com.lunchroom.orders.model;
 
-
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,20 +13,23 @@ import lombok.Data;
 @Data
 @Entity
 public class Orders {
-    @Id
+  @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+  private long id;
 
-    @NotBlank
-    @Size(min = 0, max = 20)
-    private String name;
+  @NotBlank
+  @Size(min = 0, max = 20)
+  private String employee;
 
-    @NotBlank
-    @Size(min = 0, max = 10)
-    private String type;
+  private Date updated;
 
-    @NotBlank
-    @Size(min = 0, max = 10)
-    private int calories;
+  private Date created;
 
+  public void setCreated(Date date) {
+    this.created = date;
+  }
+
+  public void setUpdated(Date date) {
+    this.updated = date;
+  }
 }
