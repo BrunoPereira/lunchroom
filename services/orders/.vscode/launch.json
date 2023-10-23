@@ -15,7 +15,8 @@
       "envFile": "${workspaceFolder}/.env",
       "env": {
         "ORDER_PORT": 8082,
-        "DB_HOST": "localhost"
+        "DB_HOST": "localhost",
+        "CALORIES_ENDPOINT": "http://localhost:8081/api/product/calories"
       }
     }
   ]

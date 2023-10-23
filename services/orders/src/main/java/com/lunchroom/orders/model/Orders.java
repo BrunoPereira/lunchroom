@@ -25,6 +25,8 @@ public class Orders {
 
   private Date created;
 
+  private int calories;
+
   public void setCreated(Date date) {
     this.created = date;
   }
@@ -32,4 +34,5 @@ public class Orders {
   public void setUpdated(Date date) {
     this.updated = date;
   }
+
 }

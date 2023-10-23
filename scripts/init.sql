@@ -1,6 +1,7 @@
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
     employee varchar(20) NOT NULL,
+    calories smallint NOT NULL,
     created date NOT NULL,
     updated date NOT NULL DEFAULT CURRENT_DATE
 );

@@ -26,7 +26,8 @@ services:
     restart: always
     environment:
       - DB_HOST=postgres
-      - ORDER_PORT=8082  
+      - ORDER_PORT=8082 
+      - CALORIES_ENDPOINT=http://product:8081/api/product/calories 
     ports: [ '8082:8082' ]
     networks: [ lunchroom ]
     depends_on:
