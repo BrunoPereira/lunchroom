@@ -1,12 +1,12 @@
 def config = [
-    dockerName: 'product',
+    dockerName: 'orders',
 ]
 
 node {
     stage 'Clone the project'
     checkout scm
 
-    dir('service/product') {
+    dir('service/orders') {
         /*
         stage("Compilation and Analysis") {
             parallel 'Compilation': {

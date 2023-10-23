@@ -10,7 +10,7 @@ services:
     networks: [ lunchroom ]
     volumes: 
       - db:/var/lib/postgres/data
-      - ./scripts/init.sql:/docker-entrypoint-initdb.d/create_db.sql
+      - ./init.sql:/docker-entrypoint-initdb.d/create_db.sql
   product:
     image: product:latest
     restart: always
@@ -18,6 +18,16 @@ services:
       - DB_HOST=postgres
       - PRODUCT_PORT=8081  
     ports: [ '8081:8081' ]
+    networks: [ lunchroom ]
+    depends_on:
+      - postgres
+  orders:
+    image: orders:latest
+    restart: always
+    environment:
+      - DB_HOST=postgres
+      - ORDER_PORT=8082  
+    ports: [ '8082:8082' ]
     networks: [ lunchroom ]
     depends_on:
       - postgres
