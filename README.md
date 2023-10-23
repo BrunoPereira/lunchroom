@@ -4,8 +4,14 @@ First try using Spring Framework
 
 ## How to build
 
+clone the repo
+
 ```bash
-cd scripts
+git clone git@github.com:BrunoPereira/lunchroom.git
+```
+
+```bash
+cd lunchroom/scripts
 ```
 
 If the images for the product and the order haven't been build yet
